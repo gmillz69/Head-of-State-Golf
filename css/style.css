@@ -186,6 +186,7 @@ body.nav-open{ overflow: hidden; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+.nav-logo-mobile{ display:none; }
 .nav-links a{
   position: relative;
   padding: 4px 0;
@@ -466,7 +467,7 @@ section{ padding: 96px 0; }
     margin: 0;
     padding: 0;
     font-size: 20px;
-    background: rgba(241, 237, 225, 0.86);
+    background: rgba(241, 237, 225, 0.72);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     opacity: 0;
@@ -479,6 +480,8 @@ section{ padding: 96px 0; }
     visibility: visible;
     transform: translateY(0);
   }
+  .nav-logo-mobile{ display:block; margin-top: 8px; }
+  .nav-logo-mobile img{ height: 64px; width:auto; margin: 0 auto; }
   .event-card{ grid-template-columns: 1fr; }
   .split, .contact-grid{ grid-template-columns: 1fr; gap: 40px; }
   .split.reverse{ direction: ltr; }
