@@ -35,7 +35,21 @@ document.addEventListener('DOMContentLoaded', () => {
   initFanLoop();
   initLightbox();
   initScrollTop();
+  initHeaderScroll();
 });
+
+// On mobile, let the sticky header go translucent once the page starts
+// scrolling so the content scrolling past is visible through it (CSS
+// only applies the transparent look inside the mobile media query).
+function initHeaderScroll() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+  const onScroll = () => {
+    header.classList.toggle('is-scrolled', window.scrollY > 24);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
 
 // Header "fan" gallery: each card cycles through a stack of images on a
 // loop, crossfading, offset per card so the whole header feels alive

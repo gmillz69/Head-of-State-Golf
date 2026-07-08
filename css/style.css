@@ -131,23 +131,6 @@ p{ margin: 0; }
 
 .btn-sm{ padding: 10px 20px; font-size: 13px; }
 
-/* ---------- top bar ---------- */
-.topbar{
-  background: var(--green-deep);
-  color: #cfd6c4;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-}
-.topbar .wrap{
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-.topbar a{ opacity: 0.85; }
-.topbar a:hover{ opacity: 1; }
-
 /* ---------- nav ---------- */
 .site-header{
   background: var(--cream);
@@ -155,9 +138,9 @@ p{ margin: 0; }
   top: 0;
   z-index: 90;
   border-bottom: 1px solid var(--hairline);
+  transition: background .3s ease, border-color .3s ease;
 }
 body.nav-open{ overflow: hidden; }
-.topbar .wrap,
 .site-header .wrap{
   padding-left: 56px;
   padding-right: 56px;
@@ -489,12 +472,18 @@ section{ padding: 96px 0; }
   .grid-gallery{ grid-template-columns: repeat(2,1fr); }
   .brand img{ height: 64px; }
   .fan{ height: 420px; }
-  .topbar .wrap, .site-header .wrap{ padding-left: 40px; padding-right: 40px; }
+  .site-header .wrap{ padding-left: 40px; padding-right: 40px; }
+  .site-header.is-scrolled{
+    background: rgba(241, 237, 225, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom-color: rgba(26,26,20,0.06);
+  }
 }
 
 @media (max-width: 560px){
   .wrap{ padding: 0 20px; }
-  .topbar .wrap, .site-header .wrap{ padding-left: 28px; padding-right: 28px; }
+  .site-header .wrap{ padding-left: 28px; padding-right: 28px; }
   .nav{ padding: 22px 0; }
   .brand img{ height: 56px; }
   .fan{ height: 320px; }
