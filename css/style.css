@@ -166,22 +166,8 @@ p{ margin: 0; }
   display:flex;
   align-items:center;
   gap: 12px;
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: 0.02em;
 }
-.brand img{ height: 46px; width: auto; }
-.brand-text{ line-height: 1.15; }
-.brand-text small{
-  display:block;
-  font-family: var(--sans);
-  font-weight: 600;
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  color: var(--ink-soft);
-  text-transform: uppercase;
-}
+.brand img{ height: 76px; width: auto; }
 
 .nav-links{
   display:flex;
@@ -241,13 +227,13 @@ p{ margin: 0; }
 
 .fan{
   position: relative;
-  height: 460px;
+  height: 560px;
   margin-top: 72px;
 }
 .fan-card{
   position: absolute;
   top: 0;
-  width: 17.5%;
+  width: 21%;
   aspect-ratio: 3/4;
   border-radius: 18px;
   overflow: hidden;
@@ -263,11 +249,11 @@ p{ margin: 0; }
 }
 .fan-card img.is-visible{ opacity: 1; }
 
-.fan-card:nth-child(1){ left: 0%;   top: 40px;  transform: rotate(-9deg); }
-.fan-card:nth-child(2){ left: 17%;  top: -10px; transform: rotate(-3deg); }
-.fan-card:nth-child(3){ left: 41%;  top: 20px;  transform: rotate(1deg); z-index:2; }
-.fan-card:nth-child(4){ left: 65%;  top: -6px;  transform: rotate(4deg); }
-.fan-card:nth-child(5){ left: 82.5%;top: 34px;  transform: rotate(8deg); }
+.fan-card:nth-child(1){ left: 0%;    top: 48px;  transform: rotate(-9deg); }
+.fan-card:nth-child(2){ left: 16.3%; top: -12px; transform: rotate(-3deg); }
+.fan-card:nth-child(3){ left: 39.3%; top: 24px;  transform: rotate(1deg); z-index:2; }
+.fan-card:nth-child(4){ left: 62.3%; top: -8px;  transform: rotate(4deg); }
+.fan-card:nth-child(5){ left: 79%;   top: 40px;  transform: rotate(8deg); }
 
 /* ---------- sections ---------- */
 section{ padding: 96px 0; }
@@ -462,15 +448,20 @@ section{ padding: 96px 0; }
   .split.reverse{ direction: ltr; }
   .footer-top{ grid-template-columns: 1fr 1fr; }
   .grid-gallery{ grid-template-columns: repeat(2,1fr); }
-  .fan{ height: 320px; }
+  .brand img{ height: 64px; }
+  .fan{ height: 420px; }
 }
 
 @media (max-width: 560px){
   .wrap{ padding: 0 20px; }
-  .fan{ height: 220px; }
-  .fan-card{ width: 22%; }
-  .fan-card:nth-child(1){ left:-4%; }
-  .fan-card:nth-child(5){ left:82%; }
+  .brand img{ height: 56px; }
+  .fan{ height: 320px; }
+  .fan-card{ width: 30%; }
+  .fan-card:nth-child(1){ left: 0%; }
+  .fan-card:nth-child(2){ left: 14.4%; }
+  .fan-card:nth-child(3){ left: 34.8%; }
+  .fan-card:nth-child(4){ left: 55.2%; }
+  .fan-card:nth-child(5){ left: 70%; }
   .footer-top{ grid-template-columns: 1fr; }
   .grid-gallery{ grid-template-columns: repeat(2,1fr); }
   .event-card-body{ padding: 28px; }
