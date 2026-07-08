@@ -479,6 +479,14 @@ section{ padding: 96px 0; }
     -webkit-backdrop-filter: blur(12px);
     border-bottom-color: rgba(26,26,20,0.06);
   }
+  /* backdrop-filter creates a new containing block for position:fixed
+     descendants, which would shrink the full-screen .nav-links overlay
+     down to the header's own box once scrolled. Drop it while the menu
+     is open so the overlay covers the full viewport as intended. */
+  body.nav-open .site-header{
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 }
 
 @media (max-width: 560px){
