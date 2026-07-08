@@ -1,19 +1,34 @@
-// Mobile nav toggle
+// Mobile nav: full-screen blurred overlay that fades/slides in, with the
+// hamburger morphing into a close (X) icon.
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
+
   if (toggle && links) {
+    const closeMenu = () => {
+      links.classList.remove('is-open');
+      toggle.classList.remove('is-active');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-open');
+    };
+    const openMenu = () => {
+      links.classList.add('is-open');
+      toggle.classList.add('is-active');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('nav-open');
+    };
+
     toggle.addEventListener('click', () => {
-      const open = links.style.display === 'flex';
-      links.style.display = open ? 'none' : 'flex';
-      links.style.flexDirection = 'column';
-      links.style.position = 'absolute';
-      links.style.top = '64px';
-      links.style.left = '0';
-      links.style.right = '0';
-      links.style.background = '#f1ede1';
-      links.style.padding = '24px 32px';
-      links.style.borderBottom = '1px solid rgba(26,26,20,0.12)';
+      if (links.classList.contains('is-open')) closeMenu();
+      else openMenu();
+    });
+
+    links.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
     });
   }
 
