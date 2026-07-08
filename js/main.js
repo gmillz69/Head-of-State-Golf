@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initFanLoop();
   initLightbox();
+  initScrollTop();
 });
 
 // Header "fan" gallery: each card cycles through a stack of images on a
@@ -61,5 +62,22 @@ function initLightbox() {
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') close();
+  });
+}
+
+// Floating "back to top" button: appears once the page has scrolled
+// past the hero, scrolls smoothly back up on click.
+function initScrollTop() {
+  const btn = document.querySelector('.scroll-top');
+  if (!btn) return;
+
+  const toggle = () => {
+    btn.classList.toggle('is-visible', window.scrollY > 480);
+  };
+  window.addEventListener('scroll', toggle, { passive: true });
+  toggle();
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
