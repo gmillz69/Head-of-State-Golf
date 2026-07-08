@@ -156,6 +156,11 @@ p{ margin: 0; }
   z-index: 50;
   border-bottom: 1px solid var(--hairline);
 }
+.topbar .wrap,
+.site-header .wrap{
+  padding-left: 56px;
+  padding-right: 56px;
+}
 .nav{
   display: flex;
   align-items: center;
@@ -450,10 +455,12 @@ section{ padding: 96px 0; }
   .grid-gallery{ grid-template-columns: repeat(2,1fr); }
   .brand img{ height: 64px; }
   .fan{ height: 420px; }
+  .topbar .wrap, .site-header .wrap{ padding-left: 40px; padding-right: 40px; }
 }
 
 @media (max-width: 560px){
   .wrap{ padding: 0 20px; }
+  .topbar .wrap, .site-header .wrap{ padding-left: 28px; padding-right: 28px; }
   .nav{ padding: 22px 0; }
   .brand img{ height: 56px; }
   .fan{ height: 320px; }
