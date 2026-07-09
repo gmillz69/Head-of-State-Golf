@@ -1,3 +1,22 @@
+// Preloader: shows for 2s on a cream backdrop matching the site, then
+// fades out smoothly into the page.
+document.addEventListener('DOMContentLoaded', () => {
+  initPreloader();
+});
+
+function initPreloader() {
+  const preloader = document.getElementById('preloader');
+  if (!preloader) return;
+
+  document.body.classList.add('is-loading');
+
+  window.setTimeout(() => {
+    preloader.classList.add('is-hidden');
+    document.body.classList.remove('is-loading');
+    preloader.addEventListener('transitionend', () => preloader.remove(), { once: true });
+  }, 2000);
+}
+
 // Mobile nav: full-screen blurred overlay that fades/slides in, with the
 // hamburger morphing into a close (X) icon.
 document.addEventListener('DOMContentLoaded', () => {
